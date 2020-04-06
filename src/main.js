@@ -8,7 +8,7 @@ import './assets/css/global.css'
 import './assets/fonts/iconfont.css'
 import axios from 'axios'
 // 设置请求的根路径
-axios.defaults.baseURL = ''
+axios.defaults.baseURL = 'http://localhost:8080/springMVC_day01_start/users/'
 // 将axios挂载到vue的原型对象上
 Vue.prototype.$http = axios
 Vue.config.productionTip = false

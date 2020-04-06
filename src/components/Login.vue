@@ -17,13 +17,8 @@
                 </el-form-item>
                 <!-- 按钮区域 -->
                 <el-form-item class="btns">
-<<<<<<< HEAD
-                    <el-button type="primary" @click="login">登录111</el-button>
-                    <el-button type="info" @click="resetLoginForm">重置</el-button>
-=======
-                    <el-button type="primary" @click="login">登录</el-button>
-                    <el-button type="info" @click="resetLoginForm">重置123</el-button>
->>>>>>> 14655e1a03f670801bd98949c0273816be5b7212
+                  <el-button type="primary" @click="login">登录</el-button>
+                  <el-button type="info" @click="resetLoginForm">重置</el-button>
                 </el-form-item>
             </el-form>
         </div>
@@ -63,8 +58,10 @@ export default {
     login () {
       this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return
-        // const { data: res } = await this.$http.post('login', this.loginForm)
-        // if (res.meta.status !== 200) return this.$message.error('登录失败!')// 弹出登录失败
+        // const result = await this.$http.post('user', this.loginForm)
+        const { data: res } = await this.$http.post('login', this.loginForm)
+        console.log(res)
+        if (res.code !== 200) return this.$message.error('登录失败!')// 弹出登录失败
         this.$message.success('登录成功！')
         // 1、将登录成功以后的token，保存到客户端的sessionStorage中
         //    1.1、项目中除了登录之外的其他API接口，必须在登录之后才能访问

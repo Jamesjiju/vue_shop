@@ -1,0 +1,6 @@
+{
+  // 表示不能使用分号
+  "semi": false,
+  // 表示启用单引号
+  "singleQuote": true
+}
